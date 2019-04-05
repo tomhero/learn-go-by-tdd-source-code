@@ -2,9 +2,15 @@ package main
 
 import "fmt"
 
+const englishPrefix = "Hello, "
+const defalutEngSuffix = "World"
+
 // Hello world function ja.
 func Hello(name string) string {
-	return "Hello, " + name
+	if name != "" {
+		return englishPrefix + name
+	}
+	return englishPrefix + defalutEngSuffix
 }
 
 func main() {
