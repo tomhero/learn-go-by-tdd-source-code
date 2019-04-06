@@ -25,4 +25,8 @@ func TestHello(t *testing.T) {
 		want := "Hello, Tom"
 		assertCorrectMessage(t, got, want)
 	})
+
+	t.Run("say hello in spain". func(t, *testing.T)  {
+		// prepare to write inter function
+	})
 }
