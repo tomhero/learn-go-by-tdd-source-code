@@ -2,17 +2,26 @@ package main
 
 import "fmt"
 
+const spanish = "Spanish"
+
 const englishPrefix = "Hello, "
+const spanishPrefix = "Hola, "
+
 const defalutEngSuffix = "World"
 
 // Hello world function ja.
-func Hello(name string) string {
-	if name != "" {
-		return englishPrefix + name
+func Hello(name string, lang string) string {
+	if name == "" {
+		name = defalutEngSuffix
 	}
-	return englishPrefix + defalutEngSuffix
+
+	if lang == spanish {
+		return spanishPrefix + name
+	}
+
+	return englishPrefix + name
 }
 
 func main() {
-	fmt.Println(Hello("Tom"))
+	fmt.Println(Hello("Tom", ""))
 }
