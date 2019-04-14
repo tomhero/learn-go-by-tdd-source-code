@@ -8,3 +8,15 @@ func Sum(numbers []int) int {
 	}
 	return summy
 }
+
+// SumAll can return sum of number of slices??
+func SumAll(numbersToSum ...[]int) []int {
+	lengthOfNumbers := len(numbersToSum)
+	sums := make([]int, lengthOfNumbers)
+
+	for i, numbers := range numbersToSum {
+		sums[i] = Sum(numbers)
+	}
+
+	return sums
+}

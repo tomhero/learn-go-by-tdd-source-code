@@ -1,6 +1,9 @@
 package array
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSum(t *testing.T) {
 	t.Run("sum of five number", func(t *testing.T) {
@@ -22,6 +25,19 @@ func TestSum(t *testing.T) {
 
 		if want != got {
 			t.Errorf("want %d got %d from, %v", want, got, numbers)
+		}
+	})
+}
+
+func TestSumAll(t *testing.T) {
+	t.Run("test adding positive value", func(t *testing.T) {
+		got := SumAll([]int{1, 2}, []int{3, 9})
+		want := []int{3, 12}
+		// want := "bob"
+
+		// check if two slices are equal or not??
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("want %v got %v", want, got)
 		}
 	})
 }
