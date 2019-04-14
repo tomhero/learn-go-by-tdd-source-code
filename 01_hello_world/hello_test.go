@@ -15,18 +15,26 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, World"
 		assertCorrectMessage(t, got, want)
 	})
 
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("Tom")
+		got := Hello("Tom", "")
 		want := "Hello, Tom"
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("say hello in spain". func(t, *testing.T)  {
-		// prepare to write inter function
+	t.Run("say hello in Spainish", func(t *testing.T) {
+		got := Hello("Tam", "Spanish")
+		want := "Hola, Tam"
+		assertCorrectMessage(t, got, want)
+	})
+
+	t.Run("say hello in French", func(t *testing.T) {
+		got := Hello("Tum", "French")
+		want := "Bonjour, Tum"
+		assertCorrectMessage(t, got, want)
 	})
 }
